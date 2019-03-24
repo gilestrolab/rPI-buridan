@@ -1,0 +1,176 @@
+<!--
+   index.html
+   
+   Copyright 2019 Giorgio <gg@wilson>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   https://codepen.io/matthu185/pen/myyvgr
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>Digital Buridan on a Raspberry PI</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+
+<body>
+
+      <form action="index.html" method="POST" id="mainform">
+      
+        <h1>Digital Buridan on a Raspberry PI</h1>
+        <h4>A device from the <a href="http://lab.gilest.ro">gilestro laboratory</a></h4>
+
+        <fieldset>
+          <legend><span class="number">1</span>Background</legend>
+
+          <div>
+            <input type="radio" id="fill_bg" name="background_choice" value="fill_bg" checked>
+            <label for="fill_bg">Plain fill</label>
+          </div>
+
+          
+          <div id="RGB_fill_bg" class="RGB">
+          <label for "RGB_fill_bg"  class="medium_label">Background color: </label>
+            <input type="text" name="fill_bg_red" id="fill_bg_red" class="value" value="0">
+            <label for "fill_bg_red">Red</label>
+            <input type="text" name="fill_bg_green" id="fill_bg_green" class="value" value="0">
+            <label for "fill_bg_green">Green</label>
+            <input type="text" id="fill_bg_blue" name="fill_bg_blue" class="value" value="0">
+            <label for "fill_bg_blue">Blue</label>
+          <div>
+
+          <div>
+            <input type="radio" id="moving_vbars" name="background_choice" value="moving_vbars">
+            <label for="moving_vbars">Multiple moving vertical bars</label>
+          </div>
+
+         <div>
+          <label for "moving_vbars_size" class="medium_label">Bar size: </label>
+          <input type="text" name="moving_vbars_size" id="moving_vbars_size" class="value" value=5>degrees
+         </div>
+         <div>
+          <label for "moving_vbars_speed" class="medium_label">Refresh speed: </label>
+          <input type="text" name="moving_vbars_speed" id="moving_vbars_speed" class="value" value=10>Hz
+         </div>
+
+          <div id="RGB_moving_vbars_bg" class="RGB">
+          <label for "RGB_moving_vbars_bg" class="medium_label">Background color: </label>
+            <input type="text" name="moving_vbars_bg_red" id="moving_vbars_bg_red" class="value"  value=10>
+            <label for "moving_vbars_bg_red">Red</label>
+            <input type="text" name="moving_vbars_bg_green" id="moving_vbars_bg_green" class="value" value=0>
+            <label for "moving_vbars_bg_green">Green</label>
+            <input type="text" name="moving_vbars_bg_blue" id="moving_vbars_bg_blue" class="value" value=0>
+            <label for "moving_vbars_bg_blue">Blue</label>
+          <div>
+
+          <div id="RGB_moving_vbars_fg" class="RGB">
+          <label for "RGB_moving_vbars_fg"  class="medium_label">Foreground color: </label>
+            <input type="text" name="moving_vbars_fg_red" id="moving_vbars_fg_red" class="value" value=0>
+            <label for "moving_vbars_fg_red">Red</label>
+            <input type="text" name="moving_vbars_fg_green" id="moving_vbars_fg_green" class="value" value=10>
+            <label for "moving_vbars_fg_green">Green</label>
+            <input type="text" name="moving_vbars_fg_blue" id="moving_vbars_fg_blue" class="value" value=0>
+            <label for "moving_vbars_fg_blue">Blue</label>
+          <div>
+
+          <div>
+            <input type="radio" id="moving_vbar" name="background_choice" value="moving_vbar">
+            <label for="moving_vbar">Single vertical bar</label>
+          </div>
+
+         <div>
+          <label for "moving_vbar_size" class="medium_label">Bar size: </label>
+          <input type="text" name="moving_vbar_size" id="moving_vbar_size" class="value" value=5>degrees
+         </div>
+         <div>
+          <label for "moving_vbar_speed" class="medium_label">Refresh speed: </label>
+          <input type="text" name="moving_vbar_speed" id="moving_vbar_speed" class="value" value=10>Hz
+         </div>
+
+          <div id="RGB_moving_vbar_bg" class="RGB">
+          <label for "RGB_moving_vbar_bg" class="medium_label">Background color: </label>
+            <input type="text" name="moving_vbar_bg_red" id="moving_vbar_bg_red" class="value" value=10>
+            <label for "moving_vbar_bg_red">Red</label>
+            <input type="text" name="moving_vbar_bg_green" id="moving_vbar_bg_green" class="value" value=0>
+            <label for "moving_vbar_bg_green">Green</label>
+            <input type="text" name="moving_vbar_bg_blue" id="moving_vbar_bg_blue" class="value" value=0>
+            <label for "moving_vbar_bg_blue">Blue</label>
+          <div>
+
+          <div id="RGB_moving_vbar_fg" class="RGB">
+          <label for "RGB_moving_vbar_fg"  class="medium_label">Foreground color: </label>
+            <input type="text" name="moving_vbar_fg_red" id="moving_vbar_fg_red" class="value" value=0>
+            <label for "moving_vbar_fg_red">Red</label>
+            <input type="text" name="moving_vbar_fg_green" id="moving_vbar_fg_green" class="value" value=10>
+            <label for "moving_vbar_fg_green">Green</label>
+            <input type="text" name="moving_vbar_fg_blue" id="moving_vbar_fg_blue" class="value" value=0>
+            <label for "moving_vbar_fg_blue">Blue</label>
+          <div>
+        </fieldset>
+
+        
+        <fieldset>
+          <legend><span class="number">2</span>Foreground</legend>
+
+          <div>
+            <input type="radio" id="buridan" name="foreground_choice" value="buridan" checked>
+            <label for="buridan">Buridan</label>
+          </div>
+
+          <label for "buridan_bar_size" class="medium_label">Bar size: </label>
+          <input type="text" name="buridan_bar_size" id="buridan_bar_size" class="value" value=5>degrees
+
+          <div id="buridan_fg" class="RGB">
+          <label for "RGB_fill_fg"  class="medium_label">Foreground color: </label>
+            <input type="text" name="buridan_fg_red" id="buridan_fg_red" class="value" value=0>
+            <label for "buridan_fg_red">Red</label>
+            <input type="text" name="buridan_fg_green" id="buridan_fg_green" class="value" value=100>
+            <label for "buridan_fg_green">Green</label>
+            <input type="text" name="buridan_fg_blue" id="buridan_fg_blue" class="value" value=0>
+            <label for "buridan_fg_blue">Blue</label>
+          <div>
+        </fieldset>
+
+        <button type="submit" class="real">Apply</button>
+      </form>
+
+<script>
+$("#mainform").submit(function(event){
+    alert("submitted");
+    event.preventDefault(); //prevent default action 
+    var post_url = $(this).attr("action"); //get form action url
+    var request_method = $(this).attr("method"); //get form GET/POST method
+    var form_data = $(this).serialize(); //Encode form elements for submission
+    
+    $.ajax({
+        url : post_url,
+        type: request_method,
+        data : form_data
+    }).done(function(response){ //
+        $("#server-results").html(response);
+    });
+});
+</script>
+
+</body>
+</html>
