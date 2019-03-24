@@ -14,25 +14,18 @@ The easiest way to get the setup running is by burning an image of the SD card (
 
 *   [hzeller](https://github.com/hzeller)/**[rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix)[](https://github.com/BNNorman/rpi-rgb-led-matrix-animator)**
 
-<figure class="wp-block-image">![](https://labbook.gilest.ro/wp-content/uploads/2019/03/image.png)
-
-<figcaption>A rendering of the assembled structure</figcaption>
-
-</figure>
-
 **Assembly.**
+
+![Schematics of assembly](https://labbook.gilest.ro/wp-content/uploads/2019/03/image.png)
+
 
 *   Download and burn the PI image with the custo software (link)
 *   Mount the 6 panels in a structure using the hex screws and the 3D printed parts.
 *   If using 64x64 LED panels, the bonnet must first be modified to properly drive this configuration by soldiering a jumper on the back (see figure below).
 *   Connect the bonnet to the PI and connect all the cables
 
-<figure class="wp-block-image">![led_matrices_addr-e-pad-bonnet.jpg](https://cdn-learn.adafruit.com/assets/assets/000/063/007/medium640/led_matrices_addr-e-pad-bonnet.jpg?1538677462)
-
-<figcaption>Soldier the lower pins of the jumper to drive 64x64 panels. This applies to the panels linked above.</figcaption>
-
-</figure>
+![Modifications on the bonnet](https://cdn-learn.adafruit.com/assets/assets/000/063/007/medium640/led_matrices_addr-e-pad-bonnet.jpg?1538677462)
 
 **The software.**
 
-The software driving the buridan can be found on github
+The software driving the buridan can be found here.
