@@ -113,6 +113,17 @@ class webHandler(BaseHTTPRequestHandler):
         fv['moving_vbar_fg_green'] = form.getvalue("moving_vbar_fg_green", "")
         fv['moving_vbar_fg_blue'] = form.getvalue("moving_vbar_fg_blue", "")
 
+        fv['flashing_bars_size'] = form.getvalue("flashing_bars_size", "")
+        fv['flashing_bars_speed'] = form.getvalue("flashing_bars_speed", "")
+        fv['flashing_bars_positions'] = form.getvalue("flashing_bars_positions", "")
+        fv['flashing_bars_bg_red'] = form.getvalue("flashing_bars_bg_red", "")
+        fv['flashing_bars_bg_green'] = form.getvalue("flashing_bars_bg_green", "")
+        fv['flashing_bars_bg_blue'] = form.getvalue("flashing_bars_bg_blue", "")
+        fv['flashing_bars_fg_red'] = form.getvalue("flashing_bars_fg_red", "")
+        fv['flashing_bars_fg_green'] = form.getvalue("flashing_bars_fg_green", "")
+        fv['flashing_bars_fg_blue'] = form.getvalue("flashing_bars_fg_blue", "")
+
+
         fv['fg_choice'] = form.getvalue("foreground_choice", "")
         
         fv['buridan_bar_size'] = form.getvalue("buridan_bar_size", "")
@@ -127,6 +138,7 @@ class webHandler(BaseHTTPRequestHandler):
         self.buridan_chamber.options['solid_background'] = ( fv['bg_choice'] == "fill_bg" )
         self.buridan_chamber.options['grated_background'] = ( fv['bg_choice'] == "moving_vbars" )
         self.buridan_chamber.options['moving_back_bar'] = ( fv['bg_choice'] == "moving_vbar" )
+        self.buridan_chamber.options['flashing_bars'] = ( fv['bg_choice'] == "flashing_bars" )
         
         if self.buridan_chamber.options['solid_background']:
             self.buridan_chamber.options['bg_color'] = (int(fv['fill_bg_red']), int(fv['fill_bg_green']), int(fv['fill_bg_blue']))
@@ -139,6 +151,10 @@ class webHandler(BaseHTTPRequestHandler):
             self.buridan_chamber.options['bg_color'] = (int(fv['moving_vbar_bg_red']), int(fv['moving_vbar_bg_green']), int(fv['moving_vbar_bg_blue']))
             self.buridan_chamber.options['grating_color'] = (int(fv['moving_vbar_fg_red']), int(fv['moving_vbar_fg_green']), int(fv['moving_vbar_fg_blue']))   
             
+        if self.buridan_chamber.options['flashing_bars']:
+            self.buridan_chamber.options['bg_color'] = (int(fv['flashing_bars_bg_red']), int(fv['flashing_bars_bg_green']), int(fv['flashing_bars_bg_blue']))
+            self.buridan_chamber.options['grating_color'] = (int(fv['flashing_bars_fg_red']), int(fv['flashing_bars_fg_green']), int(fv['flashing_bars_fg_blue']))   
+            self.buridan_chamber.options['flashing_bars_positions'] = fv['flashing_bars_positions']
 
         self.buridan_chamber.options['draw_buridan'] = ( fv['fg_choice'] == "buridan" )        
         self.buridan_chamber.options['fg_color'] = (int(fv['buridan_fg_red']), int(fv['buridan_fg_green']), int(fv['buridan_fg_blue']))

@@ -48,7 +48,7 @@
             <label for="fill_bg">Plain fill</label>
           </div>
 
-          
+          <!-- Option 1 - Solid BG -->
           <div id="RGB_fill_bg" class="RGB">
           <label for "RGB_fill_bg"  class="medium_label">Background color: </label>
             <input type="text" name="fill_bg_red" id="fill_bg_red" class="value" value="0">
@@ -59,6 +59,7 @@
             <label for "fill_bg_blue">Blue</label>
           <div>
 
+          <!-- Option 2 - A Graded background with multiple parallel bars -->
           <div>
             <input type="radio" id="moving_vbars" name="background_choice" value="moving_vbars">
             <label for="moving_vbars">Multiple moving vertical bars</label>
@@ -93,6 +94,7 @@
             <label for "moving_vbars_fg_blue">Blue</label>
           <div>
 
+          <!-- Option 3 - A single bar moving in circle -->
           <div>
             <input type="radio" id="moving_vbar" name="background_choice" value="moving_vbar">
             <label for="moving_vbar">Single vertical bar</label>
@@ -126,6 +128,48 @@
             <input type="text" name="moving_vbar_fg_blue" id="moving_vbar_fg_blue" class="value" value=0>
             <label for "moving_vbar_fg_blue">Blue</label>
           <div>
+
+          <!-- Option 4 - Multiple flashing bars -->
+          <div>
+            <input type="radio" id="flashing_bars" name="background_choice" value="flashing_bars">
+            <label for="flashing_bars">Flashing vertical bars</label>
+          </div>
+
+         <div>
+          <label for "flashing_bars_size" class="medium_label">Bar size: </label>
+          <input type="text" name="flashing_bars_size" id="flashing_bars_size" class="value" value=5>degrees
+         </div>
+         <div>
+          <label for "flashing_bars_speed" class="medium_label">Refresh speed: </label>
+          <input type="text" name="flashing_bars_speed" id="flashing_bars_speed" class="value" value=10>Hz
+         </div>
+         <div>
+          <label for "flashing_bars_positions" class="medium_label">Bars positions: </label>
+          <input type="text" name="flashing_bars_positions" id="flashing_bars_speed" class="long-value" value="(60,310)">
+         </div>
+
+          <div id="RGB_flashing_bars_bg" class="RGB">
+          <label for "RGB_flashing_bars_bg" class="medium_label">Background color: </label>
+            <input type="text" name="flashing_bars_bg_red" id="flashing_bars_bg_red" class="value" value=10>
+            <label for "flashing_bars_bg_red">Red</label>
+            <input type="text" name="flashing_bars_bg_green" id="flashing_bars_bg_green" class="value" value=0>
+            <label for "flashing_bars_bg_green">Green</label>
+            <input type="text" name="flashing_bars_bg_blue" id="flashing_bars_bg_blue" class="value" value=0>
+            <label for "flashing_bars_bg_blue">Blue</label>
+          <div>
+
+          <div id="RGB_flashing_bars_fg" class="RGB">
+          <label for "RGB_flashing_bars_fg"  class="medium_label">Foreground color: </label>
+            <input type="text" name="flashing_bars_fg_red" id="flashing_bars_fg_red" class="value" value=0>
+            <label for "flashing_bars_fg_red">Red</label>
+            <input type="text" name="flashing_bars_fg_green" id="flashing_bars_fg_green" class="value" value=10>
+            <label for "flashing_bars_fg_green">Green</label>
+            <input type="text" name="flashing_bars_fg_blue" id="flashing_bars_fg_blue" class="value" value=0>
+            <label for "flashing_bars_fg_blue">Blue</label>
+          <div>
+
+
+
         </fieldset>
 
         
@@ -156,7 +200,7 @@
 
 <script>
 $("#mainform").submit(function(event){
-    alert("submitted");
+    //alert("submitted");
     event.preventDefault(); //prevent default action 
     var post_url = $(this).attr("action"); //get form action url
     var request_method = $(this).attr("method"); //get form GET/POST method
